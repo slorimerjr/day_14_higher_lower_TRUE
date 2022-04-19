@@ -4,25 +4,21 @@ from art import vs
 from game_data import data
 from replit import clear
 
-
-# pull 2 random items from the imported list
 def randomize_choice():
     return random.choice(data)
-
+    
 def find_answer(choice_a, choice_b):
     if choice_a["follower_count"] > choice_b["follower_count"]:
         return "a"
     else:
         return "b"
-
+        
 def map_choices(choice_a, choice_b):
     print(logo)
     print(f"Compare A: {choice_a['name']}, a {choice_a['description']}, from {choice_a['country']}.")
     print(vs)
     print(f"Against B: {choice_b['name']}, a {choice_b['description']}, from {choice_b['country']}.")
-
-
-
+    
 def game(): 
     score = 0
     keep_playing = True
@@ -40,5 +36,10 @@ def game():
         else:
             clear()
             print(f"Sorry, that's wrong. Final score: {score}.")
+            cont_playing = input("Would you like to continue playing? Y or N: ").lower()
             keep_playing = False
+            if cont_playing == "y":
+                clear()
+                keep_playing = True
+                
 game()
