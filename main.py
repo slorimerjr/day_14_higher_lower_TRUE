@@ -2,6 +2,7 @@ import random
 from art import logo
 from art import vs
 from game_data import data
+from replit import clear
 
 
 # pull 2 random items from the imported list
@@ -15,12 +16,13 @@ def find_answer(choice_a, choice_b):
         return "b"
 
 def map_choices(choice_a, choice_b):
+    print(logo)
     print(f"Compare A: {choice_a['name']}, a {choice_a['description']}, from {choice_a['country']}.")
     print(vs)
     print(f"Against B: {choice_b['name']}, a {choice_b['description']}, from {choice_b['country']}.")
 
 
-print(logo)
+
 def game(): 
     score = 0
     keep_playing = True
@@ -33,8 +35,10 @@ def game():
         guess = input("Who has more follower? A or B: ").lower()
         if guess == answer:
             score += 1
+            clear()
             print(f"You're right! Currenct score: {score}.")
         else:
+            clear()
             print(f"Sorry, that's wrong. Final score: {score}.")
             keep_playing = False
 game()
