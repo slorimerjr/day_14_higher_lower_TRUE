@@ -1,9 +1,8 @@
-#import data, logo
 import random
 from art import logo
 from art import vs
 from game_data import data
-# name, follower_count, description, country i.e. print(choice_one["country"])
+
 
 # pull 2 random items from the imported list
 def randomize_choice():
